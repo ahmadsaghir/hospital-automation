@@ -1,5 +1,6 @@
 <?php
 
+use App\Hasta;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Controller@home');
+Route::get('/hakkimizda', 'Controller@hakkimizda');
+Route::get('/iletisim', 'Controller@iletisim');
+Route::get('/otomasyon', 'Controller@otomasyon');
+
