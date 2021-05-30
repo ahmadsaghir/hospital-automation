@@ -28,3 +28,13 @@ Route::get('/otomasyon/randevular/{randevu}/edit', 'RandevuController@edit');
 Route::put('/otomasyon/randevular/{randevu}', 'RandevuController@update');
 Route::get('/otomasyon/randevular/{randevu}/delete', 'RandevuController@destroy')->name('randevu.delete');
 Route::get('/randevular/search/', 'RandevuController@search')->name('randevu.search');
+
+/*hastalar*/
+Route::get('/otomasyon/hastalar/create', 'HastaController@create');
+Route::post('/otomasyon/hastalar', 'HastaController@store');
+Route::get('/otomasyon/hastalar', 'HastaController@index')->name('hasta.index');
+Route::get('/otomasyon/hastalar/{hasta}', 'HastaController@show')->name('hasta.show');
+Route::get('/otomasyon/hastalar/{hasta}/edit', 'HastaController@edit');
+Route::put('/otomasyon/hastalar/{hasta}', 'HastaController@update');
+Route::get('/otomasyon/hastalar/{hasta}/delete', 'HastaController@destroy')->name('hasta.delete');
+Route::get('/hastalar/search/', 'HastaController@search')->name('hasta.search');
