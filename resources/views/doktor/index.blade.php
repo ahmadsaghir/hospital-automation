@@ -53,4 +53,5 @@
             </div>
         </div>
     </section>
+    {{ $doktorlar -> links() }}
 @endsection
