@@ -52,5 +52,14 @@ class DoktorController extends Controller
 
         ]);
     }
+    public function search(Request $request){
 
+        $search = $request->input('search');
+        $doktorlar = Doktor::query()
+            ->where('doktorTc', 'LIKE', "%{$search}%")
+            ->orWhere('doktorAd', 'LIKE', "%{$search}%")
+            ->get();
+        return view('doktor.search', compact('doktorlar'),compact('search'))
+            ->with('query',\request('search'));
+    }
 }
