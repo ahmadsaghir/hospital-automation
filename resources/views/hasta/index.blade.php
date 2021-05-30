@@ -55,4 +55,5 @@
             </div>
         </div>
     </section>
+    {{ $hastalar -> links() }}
 @endsection
