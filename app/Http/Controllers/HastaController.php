@@ -55,5 +55,15 @@ class HastaController extends Controller
 
         ]);
     }
+    public function search(Request $request){
 
+        $search = $request->input('search');
+        $hastalar = Hasta::query()
+            ->where('hastaTC', 'LIKE', "%{$search}%")
+            ->orWhere('hastaAd', 'LIKE', "%{$search}%")
+            ->orWhere('hastaSad', 'LIKE', "%{$search}%")
+            ->get();
+        return view('hasta.search', compact('hastalar'),compact('search'))
+            ->with('query',\request('search'));
+    }
 }
