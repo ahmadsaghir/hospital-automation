@@ -38,3 +38,13 @@ Route::get('/otomasyon/hastalar/{hasta}/edit', 'HastaController@edit');
 Route::put('/otomasyon/hastalar/{hasta}', 'HastaController@update');
 Route::get('/otomasyon/hastalar/{hasta}/delete', 'HastaController@destroy')->name('hasta.delete');
 Route::get('/hastalar/search/', 'HastaController@search')->name('hasta.search');
+
+/*doktorlar*/
+Route::get('/otomasyon/doktorlar/create', 'DoktorController@create');
+Route::post('/otomasyon/doktorlar', 'DoktorController@store');
+Route::get('/otomasyon/doktorlar', 'DoktorController@index')->name('doktor.index');
+Route::get('/otomasyon/doktorlar/{unvan}', 'DoktorController@show')->name('doktor.show');
+Route::get('/otomasyon/doktorlar/{unvan}/edit', 'DoktorController@edit');
+Route::put('/otomasyon/doktorlar/{unvan}', 'DoktorController@update');
+Route::get('/otomasyon/doktorlar/{unvan}/delete', 'DoktorController@destroy')->name('doktor.delete');
+Route::get('/doktorlar/search/', 'DoktorController@search')->name('doktor.search');
